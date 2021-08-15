@@ -1,101 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.AddStudentActivity">
+    tools:context=".AddStudentActivity">
 
-
-    <TextView
-        android:text="Add Student"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:layout_marginBottom="30sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/et_fullname"
-        android:hint="Full Name"
-        android:layout_marginVertical="10sp"
-        android:background="@drawable/custom_edit_text"
-        android:inputType="text"
-        android:gravity="center"
-        android:layout_marginHorizontal="50sp"
-        android:textSize="20sp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40sp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_age"
-        android:hint="Age"
-        android:inputType="number"
-        android:layout_marginVertical="10sp"
-        android:background="@drawable/custom_edit_text"
-        android:gravity="center"
-        android:layout_marginHorizontal="50sp"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="40sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Student Details"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:text="Select Gender"
-        android:textSize="25sp"
-        android:layout_marginVertical="10sp"
-        android:layout_marginHorizontal="50sp"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="254dp"
+            android:layout_height="264dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/noimg" />
 
-    <RadioGroup
-        android:id="@+id/rg_gender"
-        android:layout_marginHorizontal="50sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/rb_male"
-            android:text="Male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/white"
+                android:hint="Full Name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <RadioButton
-            android:id="@+id/rb_female"
-            android:text="Female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
-        <RadioButton
-            android:id="@+id/rb_others"
-            android:text="Others"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </RadioGroup>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:hint="Age"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/et_address"
-        android:hint="Address"
-        android:layout_marginVertical="10sp"
-        android:background="@drawable/custom_edit_text"
-        android:inputType="text"
-        android:gravity="center"
-        android:layout_marginHorizontal="50sp"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="40sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:text="Select Gender"
+            android:textSize="15sp"
+            android:textStyle="italic" />
 
-    <Button
-        android:id="@+id/btn_save"
-        android:text="Save"
-        android:textAllCaps="false"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/black"
-        android:layout_marginVertical="10sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdoMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/rdoFemale"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="Female" />
+
+            <RadioButton
+                android:id="@+id/rdoOthers"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:text="Others" />
+
+        </RadioGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/white"
+                android:hint="Address" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/roundedbutton"
+            android:text="Add Student"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</ScrollView>

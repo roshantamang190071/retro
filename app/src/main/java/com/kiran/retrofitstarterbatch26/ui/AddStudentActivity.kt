@@ -1,88 +1,50 @@
 package com.kiran.retrofitstarterbatch26.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.widget.*
-import com.google.android.material.button.MaterialButton
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.RadioButton
+import com.google.android.material.textfield.TextInputEditText
 import com.kiran.retrofitstarterbatch26.R
-import com.kiran.retrofitstarterbatch26.ui.model.Student
-import com.kiran.retrofitstarterbatch26.ui.repository.UserRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
 
 class AddStudentActivity : AppCompatActivity() {
-
-    private lateinit var et_fullname : EditText
-    private lateinit var et_age : EditText
-    private lateinit var et_address : EditText
-    private lateinit var btn_save : Button
-
-    var rg_gender : RadioGroup? = null
-    lateinit var radioButton : RadioButton
-
+    private lateinit var etFullName: TextInputEditText
+    private lateinit var etAge: TextInputEditText
+    private lateinit var etAddress: TextInputEditText
+    private lateinit var rdoMale: RadioButton
+    private lateinit var rdoFemale: RadioButton
+    private lateinit var rdoOthers: RadioButton
+    private lateinit var btnSave: Button
+    private lateinit var imgProfile: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_student)
 
-        et_fullname = findViewById(R.id.et_fullname)
-        et_age = findViewById(R.id.et_age)
-        rg_gender = findViewById(R.id.rg_gender)
-        et_address = findViewById(R.id.et_address)
-        btn_save = findViewById(R.id.btn_save)
 
-        btn_save.setOnClickListener {
+        etFullName = findViewById(R.id.etFullName)
+        etAge = findViewById(R.id.etAge)
+        etAddress = findViewById(R.id.etAddress)
+        rdoMale = findViewById(R.id.rdoMale)
+        rdoFemale = findViewById(R.id.rdoFemale)
+        rdoOthers = findViewById(R.id.rdoOthers)
+        btnSave = findViewById(R.id.btnSave)
+        imgProfile = findViewById(R.id.imgProfile)
 
-            val intSelectButton: Int = rg_gender!!.checkedRadioButtonId
-
-            if (TextUtils.isEmpty(et_fullname.text) || TextUtils.isEmpty(et_age.text)
-                || TextUtils.isEmpty(et_address.text)
-            ) {
-                Toast.makeText(
-                    this@AddStudentActivity,
-                    "Please fill all information",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            } else if (intSelectButton == -1) {
-                Toast.makeText(
-                    this@AddStudentActivity,
-                    "Please select a gender",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
-
-            } else {
-
-                val fullname: String = et_fullname.text.toString()
-                val age: Int = et_age.text.toString().toInt()
-                val address = et_address.text.toString()
-
-                radioButton = findViewById(intSelectButton)
-                val gender = radioButton.text.toString()
-
-
-                val student =
-                    Student(fullname = fullname, age = age, gender = gender, address = address)
-
-                CoroutineScope(IO).launch {
-
-                try{
-
-                    val repository = UserRepository()
-                    val response = repository.
-                } catch (ex : Exception){
-
-                }
-            }
-
-
-                Toast.makeText(this@AddStudentActivity, "Student Added", Toast.LENGTH_SHORT).show()
-            }
+        btnSave.setOnClickListener {
+            saveStudent()
         }
 
+        imgProfile.setOnClickListener {
+            loadPopUpMenu()
+        }
+    }
 
+    private fun loadPopUpMenu() {
+        TODO("Not yet implemented")
+    }
+
+    private fun saveStudent() {
+        TODO("Not yet implemented")
     }
 }
