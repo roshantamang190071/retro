@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="40sp">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/noimg" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/imgProfile"
+        android:text="Name"
+        android:layout_toEndOf="@id/imgProfile" />
+
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvName"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imgProfile"
+        android:layout_toEndOf="@id/imgProfile"
+        android:text="Address" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAddress"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imgProfile"
+        android:text="Salary"
+        android:layout_toEndOf="@+id/imgProfile" />
+
+    <ImageButton
+        android:id="@+id/ibUpdate"
+        android:layout_marginTop="20sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_update_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        />
+
+    <ImageButton
+        android:id="@+id/ibDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="60sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_delete_24" />
+
+
+</RelativeLayout>
